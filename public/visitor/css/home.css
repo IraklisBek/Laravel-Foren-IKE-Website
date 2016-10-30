@@ -1,0 +1,80 @@
+﻿.homeImgs{
+	float:left; 
+	border:3px solid black; 
+	border-radius:70%; 
+	margin-top:1.4%; 
+	margin-bottom:1%;
+	width:8%;
+	transition:0.6s;
+}
+﻿h1{
+	text-align:center; 
+	font-weight:normal;
+}
+.homeImgs:hover{
+	border:3px solid rgb(19,91,103); 
+	border-radius:50%;
+	transition:0.3s;	
+}
+.homeImgs1{
+	margin-left:24.5%; 	
+}
+
+.homeImgs2_3{
+	margin-left:13.5%;
+}
+
+.homeImgs3{
+	clear:right;
+}
+
+.homeTexts{
+	float:left; 
+	margin-top:1%; 
+	width:15%; 
+	color:white;
+
+}
+.homeTexts1{
+	margin-left:24%;
+	clear:left; 	
+}
+
+.homeTexts2_3{
+	margin-left:7%;
+}
+.homeTexts3{
+	margin-left:8%;
+}
+
+h4{
+	color:white; font-weight:bold; padding:0px 0px 0px 0px; font-weight:normal;
+}
+
+a{
+	color:white; text-decoration:none;
+}
+
+p{
+	color:gray;
+}
+.logistica{
+	float:left; 
+	width:10%; 
+	margin-left:27%; 
+	padding-right:20px;
+}
+.logistica_text{
+	margin-left:20px; 
+	color:white; 
+	margin-top:-0.7%;
+}
+.homeBigLine{
+	padding:30px;
+}
+.homeFoot{
+	margin-top:40%; 
+}
+.homeFoot2{
+	margin-top:45%; 
+}
