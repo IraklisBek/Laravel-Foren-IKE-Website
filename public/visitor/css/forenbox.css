@@ -1,0 +1,133 @@
+﻿h1{
+	text-align:center; 
+	font-weight:normal;
+}
+h2{
+	font-weight:normal;
+	text-align:center;
+	margin-top:20px;
+}
+h3{
+	font-weight:normal;
+	text-align:center; 
+	color:white; 
+	padding-top:-200px;
+}
+
+.animatedForenbox{
+	width:40%;
+	margin-left:30%; 
+	border-radius:10%;
+}
+
+.forenboxFoot{
+	margin-top:10%;
+}
+.forenboxFoot2{
+	margin-top:15%;
+}
+
+.prodSmallLine{
+	position:relative;
+	margin-top:45%;
+}
+#ul1{
+	width:35%;
+	margin-left:35.5%;
+}
+#ul2{
+	width:35%; 
+	margin-left:50.5%; 
+	margin-top:6%;
+}
+#ul3{
+	position:absolute; 
+	width:40%; 
+	margin-left:50%; 
+	margin-top:8%;
+}
+#ul4{
+	position:absolute; 
+	width:40%; 
+	margin-left:20%; 
+	margin-top:28%;
+}
+#ul5{
+	width:35%;
+	margin-left:37%;
+}
+#ul6{
+	width:35%; margin-left:34%;
+}
+.forenCleat{
+	float:left; 
+	width:10%; 
+	margin-left:35%; 
+	margin-top:5%;
+}
+.ventilation{
+	width:40%; 
+	margin-left:30%; 
+	border-radius:10%;
+}
+.strawberies{
+	width:50%; 
+	margin-left:25%; 
+	border-radius:10%;
+}
+
+.productionProccess{
+	position:absolute;
+	border-radius:10%; 
+	transform: rotate(7deg); 
+	visibility: hidden; 
+	opacity: 0; 
+	transition: visibility 0s, opacity 2s linear;
+}
+
+.productionProccess1{
+	width:20%; 
+	margin-left:22%; 
+	margin-top:8%; 
+	
+}
+.productionProccess2{
+	width:17%; 
+	margin-left:40%; 
+	margin-top:17%; 
+	
+}
+.productionProccess3{
+	width:14%; 
+	margin-left:57%; 
+	margin-top:19.5%; 
+	
+}
+.productionProccess4{
+	width:11%; 
+	margin-left:71%; 
+	margin-top:30%; 
+	
+}
+
+.animated3dModel{
+	width:60%; 
+	margin-left:20%;
+	margin-top:-5%;
+}
+.uls{
+	list-style-type:none;
+}
+.uls li{
+	display:inline-block;
+}
+.uls li:before{
+	content: "• ";
+	color: rgb(49, 144, 163);
+}
+
+
+
+
+
+

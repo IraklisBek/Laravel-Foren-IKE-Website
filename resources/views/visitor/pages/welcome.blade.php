@@ -5,7 +5,7 @@
     {!! Html::style('visitor/css/home.css') !!}
 @endsection
 @section('content')
-    <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:100%;margin:0 auto; overflow-x:hidden; overflow-y:hidden; margin-top:5%">
+    <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:100%;margin:0 auto; overflow-x:hidden; overflow-y:hidden;">
         <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto; margin-left:-0.5%;">
             <ul class="amazingslider-slides" style="display:none;" id="amazingslider-slides">
                 <li><a href="{{ route('forenbox') }}"><img src="/visitor/images/slideshow/forenboxes.jpg" alt="forenboxes" title="ForenBoxes" id="wows0_0"/></a></li>
@@ -41,17 +41,17 @@
     <div class="row">
         <div class="homeTexts homeTexts1">
             <h4>PRODUCTS</h4>
-            <p>High-tech solutions for innovative packaging.<br>
+            <p class="descr">High-tech solutions for innovative packaging.<br>
                 <a href="{{ route('products') }}" >Learn more</a><br></p>
         </div>
         <div class="homeTexts homeTexts2_3">
             <h4>FORENBOX</h4>
-            <p>An innovative folded crate for fruit, vegetable, food, industrial use etc.<br>
+            <p class="descr">An innovative folded crate for fruit, vegetable, food, industrial use etc.<br>
                 <a href="{{ route('forenbox') }}" >Learn more</a><br></p>
         </div>
         <div class="homeTexts homeTexts3">
             <h4>ABOUT US</h4>
-            <p>Our company’s profile and useful information.<br>
+            <p class="descr">Our company’s profile and useful information.<br>
                 <a href="{{ route('about') }}" >Learn more</a><br></p>
         </div>
     </div>
@@ -64,7 +64,7 @@
     <script>
         setInterval(function(){
             $('h4').css("font-size", window.innerWidth*0.018);
-            $('p').css("font-size", window.innerWidth*0.015);
+            $('.descr').css("font-size", window.innerWidth*0.015);
             $('h1').css("font-size", window.innerWidth*0.035);
         },1);
     </script>

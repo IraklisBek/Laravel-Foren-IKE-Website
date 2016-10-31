@@ -3,7 +3,7 @@
 <title>Foren @yield('title')</title>
 <meta name="description" content="Automatic machines for foldable crates or boxes for fruits, cheese, mushrooms etc." />
 <link rel="shortcut icon" href="/visitor/images/general/Favicon.png">
-@yield('stylesheets')
+
 
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -18,3 +18,4 @@
 {{ Html::script('visitor/js/jquery.js') }}
 {{ Html::style('visitor/css/bootstrap.min.css') }}
 {{ Html::style('visitor/css/css.css') }}
+@yield('stylesheets')

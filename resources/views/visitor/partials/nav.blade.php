@@ -8,25 +8,25 @@
 
         <ul class="main-menu">
             <li id="homeLi">
-                <a href="{{ route('home') }}">Home</a>
+                <a href="{{ route('home') }}" class="{{ Request::is('/') ? "active" : "" }}">Home</a>
             </li>
             <li id="FORENBOXLi">
-                <a href="{{ route('forenbox') }}">FORENBOX</a>
+                <a href="{{ route('forenbox') }}" class="{{ Request::is('forenbox') ? "active" : "" }}">FORENBOX</a>
                 <ul style="position:absolute; display:none;" id="galleryUL">
-                    <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                    <li><a href="{{ route('gallery') }}" class="{{ Request::is('gallery') ? "active" : "" }}">Gallery</a></li>
                 </ul>
             </li>
             <li>
-                <a href="{{ route('products') }}">Products</a>
+                <a href="{{ route('products') }}" class="{{ Request::is('products') ? "active" : "" }}">Products</a>
             </li>
             <li>
-                <a href="{{ route('3dmodel') }}">3D Model</a>
+                <a href="{{ route('3dmodel') }}" class="{{ Request::is('3dmodel') ? "active" : "" }}">3D Model</a>
             </li>
             <li>
-                <a href="{{ route('about') }}">About us</a>
+                <a href="{{ route('about') }}" class="{{ Request::is('about') ? "active" : "" }}">About us</a>
             </li>
             <li>
-                <a href="{{ route('contact') }}">Contact</a>
+                <a href="{{ route('contact') }}" class="{{ Request::is('contact') ? "active" : "" }}">Contact</a>
             </li>
         </ul>
         <ul class="login-menu">

@@ -1,4 +1,5 @@
-@import "mobile.css";
+/*@import "mobile.css";*/
+@import "nav.css";
 @font-face {
     font-family: sofia;
     src:url('../fonts/SofiaProLight-webfont.ttf');
@@ -13,100 +14,35 @@ body, html{
     background-color:black;
     overflow-x:hidden;
 }
-@media (min-width : 560px) {
-    #navMobile{
-        display:none;
-    }
-    #navPC{
-        display:block;
-    }
-    nav {
 
-        width: 100%;
-        background-color: black;
-        position: fixed;
-        box-shadow: 0px 5px 5px -5px rgb(29, 91, 104);
-        z-index: 110;
-        padding: 0;
-        margin: 0;
-
-    }
-
-    .logo-image-menu, .login-menu {
-        width: 20%;
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        float: left;
-    }
-
-    ul.logo-image-menu li {
-        width: 40%;
-        margin-left: 15%;
-    }
-
-    .main-menu {
-        width: 60%;
-    }
-
-    nav ul li {
-        float: left;
-        text-align: center;
-    }
-
-    ul.main-menu li {
-        padding-left: 4%;
-    }
-
-    ul.login-menu li {
-        float: right;
-        padding-left: 6%;
-    }
-
-    #langUL {
-        position: absolute;
-        display: none;
-    }
-
-    #langUL li {
-        width: 60%;
-        margin-right: 44%;
-    }
-
-    ul.main-menu li a, ul.login-menu li a {
-        text-decoration: none;
-        display: block;
-    }
-
-    ul.main-menu li a {
-        color: rgb(185, 185, 185);
-    }
-
-    ul.login-menu li a {
-        color: white;
-    }
-
-    ul.main-menu li a:hover, ul.login-menu li a:hover {
-        transition: color 0.4s;
-        text-decoration: none;
-    }
-
-    ul.main-menu li a:hover {
-        color: white;
-    }
-
-    ul.login-menu li a:hover {
-        color: rgb(19, 91, 104);
-    }
-
-
-    #amazingslider-wrapper-1, #amazingslider-1, #amazingslider-slides, #amazingslider-engine, #amazingslider-thumbnails{
-        display:block;
-    }
+a{
+    cursor:pointer;
 }
 
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    width:80%;
+    margin:0px  auto;
+    border-top: 1px solid rgb(29, 91, 104);
+}
 
+.smallLine{
+    width:80%;
+    margin-left:5%;
+    height:2px;
+    padding:70px;
+}
+
+.bigLine{
+    margin: 3.5% 3.5% 3.5% 2.5%;
+    height:2px;
+    width:95%;
+}
+
+.active{
+    color:white !important;
+    //text-decoration: #1e7fff underline !important;
+}
 
