@@ -175,16 +175,17 @@
                 //event.preventDefault();
             }
         });
-
-        /*function maxUlLiWidth(ul) {
-            var max = 0;
-            $('#'+ ul+' li').each(function (e) {
-                //alert($(this).outerWidth(true));
-                if(max < $(this).width())
-                    max = $(this).width();
+        setTimeout(function(){
+            var body = document.body,
+                html = document.documentElement;
+            var height = Math.max( body.scrollHeight, body.offsetHeight,
+                html.clientHeight, html.scrollHeight, html.offsetHeight );
+            $('#amazingslider-wrapper-1').click(function(event){
+                if(event.clientY<height/12 && event.clientX >window.innerWidth/18 && event.clientX < window.innerWidth/1.13)
+                    $('html, body').animate({scrollTop : $('#first-section').offset().top - window.innerHeight/2.1},800);
             });
-            return max;
-        }*/
+        },2000);
+
     </script>
 @endsection
 

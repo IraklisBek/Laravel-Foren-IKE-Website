@@ -7,17 +7,17 @@
 @section('content')
     <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:100%;margin:0 auto; overflow-x:hidden; overflow-y:hidden; margin-top:5%">
         <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto; margin-left:-0.5%;">
-            <ul class="amazingslider-slides" style="display:none">
-                <li><a href="#"><img  src="/visitor/images/slideshow/forenbox_logo.jpg" alt="sforenbox_logo" title="ForenBox Logo"/></a></li>
-                <li><a href="#"><img src="/visitor/images/slideshow/strawberies.jpg" alt="sstrawberies" title="The ForenBox" /></a></li>
-                <li><a href="#"><img src="/visitor/images/slideshow/forenboxes.jpg" alt="sforenboxes" title="ForenBoxes" /></a></li>
-                <li><a href="#"><img src="/visitor/images/slideshow/forenbox_production.jpg" alt="sforenbox_production" title="Production" /></a></li>
+            <ul class="amazingslider-slides" style="display:none;">
+                <li><a href="#" id="spforen_cleat"><img src="visitor/images/slideshow/foren_cleat.jpg" alt="foren_cleat" title="foren_cleat" id="img1"/></a></li>
+                <li><a href="#" id="spcontro"><img src="visitor/images/slideshow/Automatic_machine_for_the_vision_control.jpg" alt="Automatic machine for the vision control" title="Automatic machine for the vision control" id="img2"/></a></li>
+                <li><a href="#" id="spassembly"><img src="visitor/images/slideshow/Assembly_machine_of_foldable.jpg" alt="Assembly machine of foldable crates or boxes" title="Assembly machine of foldable crates or boxes" id="img3"/></a></li>
+                <li><a href="#" id="sppress"><img src="visitor/images/slideshow/Automatic_press_machine.jpg" alt="Automatic_press_machine" title="Automatic_press_machine" id="img4"/></a></li>
             </ul>
             <ul class="amazingslider-thumbnails" style="display:none;">
-                <li><img src="/visitor/images/slideshow/thumbnails/forenbox_logo-tn.jpg" alt="forenboxes" title="forenboxes" /></li>
-                <li><img src="/visitor/images/slideshow/thumbnails/strawberies-tn.jpg" alt="forenbox_production" title="forenbox_production" /></li>
-                <li><img src="/visitor/images/slideshow/thumbnails/forenboxes-tn.jpg" alt="Automatic_press_machine" title="Automatic_press_machine" /></li>
-                <li><img src="/visitor/images/slideshow/thumbnails/forenbox_production-tn.jpg" alt="Automatic_machine_for_the_vision_control" title="Automatic_machine_for_the_vision_control" /></li>
+                <li><img src="visitor/images/slideshow/thumbnails/foren_cleat-tn.jpg" alt="forenboxes" title="forenboxes" /></li>
+                <li><img src="visitor/images/slideshow/thumbnails/Automatic_machine_for_the_vision_control-tn.jpg" alt="forenbox_production" title="forenbox_production" /></li>
+                <li><img src="visitor/images/slideshow/thumbnails/Assembly_machine_of_foldable-tn.jpg" alt="Automatic_press_machine" title="Automatic_press_machine" /></li>
+                <li><img src="visitor/images/slideshow/thumbnails/Automatic_press_machine-tn.jpg" alt="Automatic_machine_for_the_vision_control" title="Automatic_machine_for_the_vision_control" /></li>
             </ul>
             <div class="amazingslider-engine" id="amazingslider-engine"><a href="http://amazingslider.com" title="JavaScript Image Slideshow">JavaScript Image Slideshow</a></div>
         </div>
@@ -48,7 +48,7 @@
             </p>
         </div>
     </div>
-    <img alt="hr" src=visitor/images/general/mikrigrammi.png class="smallLine productsSmallLine">
+    <img alt="hr" src=visitor/images/general/megaligrammi.png class=bigLine>
 
     <!-- /PW01 -->
 
@@ -73,7 +73,7 @@
             </p>
         </div>
     </div>
-    <img alt="hr" src=visitor/images/general/mikrigrammi.png class="smallLine productsSmallLine">
+    <img alt="hr" src=visitor/images/general/megaligrammi.png class=bigLine>
 
     <!-- /FB01 -->
 
@@ -95,7 +95,7 @@
             </p>
         </div>
     </div>
-    <img alt="hr" src=visitor/images/general/mikrigrammi.png class="smallLine productsSmallLine">
+    <img alt="hr" src=visitor/images/general/megaligrammi.png class=bigLine>
 
     <!-- /C320 -->
 
@@ -112,18 +112,11 @@
         </div>
 
     </div>
-    <img alt="hr" src=visitor/images/general/mikrigrammi.png class="smallLine productsSmallLine">
+    <img alt="hr" src=visitor/images/general/megaligrammi.png class=bigLine>
 
     <!-- /FCLEAT -->
 
     <!--******************************************************************************************************************************-->
-
-    <div id="productsfooter" class="foot productsFoot">
-        All Rights Reserved to FOREN IKE &copy; 2016
-    </div>
-    <div class="foot productsFoot" style="margin-top:15%; border:0;">
-        Created by: <a href="https://www.behance.net/KleonTantaridis" target=_blank class=blueLink>Kleon Tantaridis</a>
-    </div>
 @endsection
 
 @section('scripts')
@@ -150,7 +143,26 @@
             $('.hiddenPtext').css("font-size", window.innerWidth*0.017);
             $('h1').css("font-size", window.innerWidth*0.035);
         },1);
-
+        var bigbool=true;
+        var bigbool2=true;
+        $("#product11").click(function(){
+            if(bigbool){
+                $("#product11").animate({width : "170%", marginLeft : "-25%"},500);
+                bigbool=false;
+            }else{
+                $("#product11").animate({width : "140%", marginLeft : "-10%"},500);
+                bigbool=true;
+            }
+        });
+        $("#product22").click(function(){
+            if(bigbool2){
+                $("#product22").animate({width : "200%", marginLeft : "-45%"},500);
+                bigbool2=false;
+            }else{
+                $("#product22").animate({width : "170%", marginLeft : "-30%"},500);
+                bigbool2=true;
+            }
+        });
     </script>
 @endsection
 

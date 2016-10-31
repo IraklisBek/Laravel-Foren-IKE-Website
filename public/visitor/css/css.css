@@ -1,5 +1,8 @@
 /*@import "mobile.css";*/
 @import "nav.css";
+*{
+    box-sizing: border-box;
+}
 @font-face {
     font-family: sofia;
     src:url('../fonts/SofiaProLight-webfont.ttf');
