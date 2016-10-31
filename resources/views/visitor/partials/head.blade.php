@@ -16,6 +16,6 @@
 
 </script>
 {{ Html::script('visitor/js/jquery.js') }}
-{{ Html::style('visitor/css/bootstrap.min.css') }}
+
 {{ Html::style('visitor/css/css.css') }}
 @yield('stylesheets')

@@ -49,3 +49,28 @@ hr{
     //text-decoration: #1e7fff underline !important;
 }
 
+.blueLink{
+    color:rgb(44,141,160);
+    cursor: pointer;
+    text-decoration:none;
+    transition: color 0.3s
+}
+.blueLink:hover{
+    color:rgb(29,91,104);
+    transition: 0.3s
+
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    border:1px solid black;
+    color:black;
+}
+

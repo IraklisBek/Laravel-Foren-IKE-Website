@@ -1,0 +1,109 @@
+﻿#sliderLong, #sliderLongHeight, #sliderShort, #sliderShortHeight, #sliderCorners{
+	
+	background-image:url('visitor/images/general/3dbuttons.jpg');
+	margin-top:3%;
+	margin-left:5%;
+	width:38%;
+	float:left;
+}
+
+.ui-slider-horizontal {
+    height: 10px !important;
+}
+.ui-slider a {outline:none;}
+.ui-slider .ui-slider-handle {
+    height: 15px !important;
+    width: 15px !important;
+}
+
+
+
+
+#tablee{
+	margin-top:8%;margin-left:6%;position:absolute;visibility:hidden;
+}
+#tablee input{
+	border:1px solid rgb(19,91,143);
+	border-radius:4px;
+	padding:4px 2px 4px 2px;
+	margin-left:2px;
+	width:60%;
+	margin-top:5px;
+}
+.error{
+	display:none;
+}
+p{
+	margin:5px;;
+}
+.loading{
+	width:20%; margin-left:40%; top:25%; position:fixed; 
+}
+
+#webGL-container{
+	width:100px; height:550px;float:left; position:fixed; visibility:hidden; top:7%;
+}
+
+.support{
+	display:none; 
+	position:fixed; 
+	margin-left:40%; 
+	z-index:200; 
+	background-color:#8A0000; 
+	border:2px solid #8A0000;  
+	border-radius:10px; 
+	color:white; 
+	width:20%; 
+	padding:4px; top:20%;
+}
+
+#errorss{
+	display:none; 
+	position:fixed; 
+	margin-left:74%; 
+	z-index:200; 
+	background-color:#8A0000; 
+	border:2px solid #8A0000;  
+	border-radius:10px; 
+	color:white; 
+	width:20%; 
+	padding:4px; 
+	top:20%;
+}
+
+.save{
+	padding:3px; 
+	width:60%;  
+	background-image:url('visitor/images/general/3dbuttons.jpg');
+	background-size:100% 100%; 
+	cursor:pointer; 
+	text-align:center;border-radius:5px
+}
+
+.loginorsignup{
+	
+	text-align:center; width:60%; border:2px solid rgb(29, 91, 104); border-radius:2px;
+}
+
+.properly{
+	top:90%; right:2%; color:white; position:absolute; text-align:right;
+}
+
+.tocheck{
+	font-size:24px; margin-top:20%; color:white; text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

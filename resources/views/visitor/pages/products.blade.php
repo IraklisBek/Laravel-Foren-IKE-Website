@@ -2,6 +2,7 @@
 
 @section('title', '| Products')
 @section('stylesheets')
+    {{ Html::style('visitor/css/bootstrap.min.css') }}
     {!! Html::style('visitor/css/products.css') !!}
 @endsection
 @section('content')

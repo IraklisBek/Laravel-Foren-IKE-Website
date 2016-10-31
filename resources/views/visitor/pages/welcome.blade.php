@@ -2,6 +2,7 @@
 
 @section('title', '| Homepage')
 @section('stylesheets')
+    {{ Html::style('visitor/css/bootstrap.min.css') }}
     {!! Html::style('visitor/css/home.css') !!}
 @endsection
 @section('content')
