@@ -19,6 +19,8 @@ Route::get('/contact', 'Visitor\\PagesController@getContact')->name('contact');
 Route::get('/3dmodel', 'Visitor\\PagesController@get3DModel')->name('3dmodel');
 Route::post('contact', 'Visitor\\PagesController@postContact')->name('pages.postContact');
 
+Route::post('/send3DModel', 'Visitor\\PagesController@send3DModel')->name('send3DModel');
+
 //Route::get('login', 'Auth\\LoginController@getLogin')->name('auth.login');
 Route::post('logUser', 'Auth\\LoginController@logUser')->name('auth.logUser');
 Route::get('logoutUser', 'Auth\\LoginController@logoutUser')->name('logoutUser');

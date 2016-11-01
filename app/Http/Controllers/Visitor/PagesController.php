@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Visitor;
 
 use App\Acme\Services\MailService;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
@@ -52,5 +53,21 @@ class PagesController extends Controller
         /*return redirect()->action(
             'Visitor\\PagesController@getContact'
         );*/
+    }
+
+    public function send3DModel(Request $request){
+        $data = array(
+            'email' => Input::get('user'),
+            'x' => Input::get('x'),
+            'z' => Input::get('z'),
+            'y1' => Input::get('y1'),
+            'y2' => Input::get('y2'),
+            'y3' => Input::get('y3'),
+            'kind' => Input::get('kind'),
+            'subject' => '3D Model mail delivery',
+            'image' => Input::get('image')
+        );
+        MailService::sendModel($data, 'visitor.emails.3dmodel');
+
     }
 }

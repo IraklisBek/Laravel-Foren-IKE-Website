@@ -35,9 +35,15 @@
         <label><input style="width:20px; vertical-align: middle; margin: 0px;" id="tripes" type="radio" name="sex" onchange="installModel('visitor/3DModels/theTripes666.dae')">Ventilation holes</label><br>
         <label><input style="width:20px; vertical-align: middle; margin: 0px;" id="xeriatripes" type="radio" name="sex" onchange="installModel('visitor/3DModels/theXerouliaTripes66.dae')">Handles and Ventilation holes</label><br>
         <p id="check" style="width:60%; padding:3px;  background-image:url('/visitor/images/general/3dbuttons.jpg'); background-size:100% 100%; cursor:pointer; text-align:center;border-radius:5px" onclick="change()">Build</p>
+        @if(!Auth::check())
+            <p class="loginorsignup"><a class="blueLink" style="cursor:pointer;" onclick=login()>Login</a> or <a class="blueLink" style="cursor:pointer;" onclick=signup()>Register</a><br> to save to your Email</p>
+        @else
+            <p class="save"><a id="bt" style="color:white; display:block;">Save to your Email</a></p>
+        @endif
         <p >Left click to Rotate</p >
         <p >Right click to Move</p >
         <p >Scroll to Zoom</p >
+
     </div>
     <div id="webglSupport2" class="support">
         <p>WebGl is not enabled in your Browser.</p>
@@ -49,6 +55,7 @@
             Then, open the Develop menu in the menu bar and select Enable WebGL.<br>
         </p>
     </div>
+    <img src="" id="fo">
     <div id="errorss">
         <p id="au" class="error">• Long sides must be over 150mm and less than 400mm</p>
         <p id="ao" class="error">• Long sides must be over 150mm and less than 400mm</p>
@@ -76,35 +83,53 @@
     <script type=text/javascript src=/visitor/js/model.js></script>
     <script>
     $(document).ready(function(){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $("#bt").click(function() {
-            renderer.setClearColor("white");
-            setTimeout(function(){window.open( renderer.domElement.toDataURL("image/png"), "Final");renderer.setClearColor("black");},500);
-            document.getElementById("bt").download  ="ForenBox_"+"" + $('#x').val()+ "X"+$('#z').val()+ "X"+$('#y1').val()+ "X"+$('#y2').val()+ "-"+$('#y3').val() + ".png"    ;
-            $(this).attr('href', renderer.domElement.toDataURL("image/png"));
-            c();
+            //renderer.setClearColor("white");
+            //setTimeout(function(){window.open( renderer.domElement.toDataURL("image/png"), "Final");renderer.setClearColor("black");},500);
+            //document.getElementById("bt").download  ="ForenBox_"+"" + $('#x').val()+ "X"+$('#z').val()+ "X"+$('#y1').val()+ "X"+$('#y2').val()+ "-"+$('#y3').val() + ".png"    ;
+            $('#bt').css('cursor', 'not-allowed').attr("id", "noID");
+            var user= "{{ Auth::user()->email }}";
+            var rate_value;
+
+            var image = renderer.domElement.toDataURL("image/png");
+            if (document.getElementById('original').checked) {
+                rate_value = "A0";
+            }if (document.getElementById('tripes').checked) {
+                rate_value = "A1";
+            }if (document.getElementById('xeria').checked) {
+                rate_value = "A2";
+            }if (document.getElementById('xeriatripes').checked) {
+                rate_value = "A3";
+            }
+            var x=$('#x').val(),
+                z=$('#z').val(),
+                y1=$('#y1').val(),
+                y2=$('#y2').val(),
+                y3=$('#y3').val(),
+                kind=rate_value;
+            $.ajax({
+                type: 'POST',
+                url: '/send3DModel',
+                data: {user: user, x: x, z: z, y1: y1, y2: y2, y3:y3, kind:kind, image: image},
+                success: function (response) {
+                    var notify = toastr.success('3D Model has been sent to your e-mail');
+                    var $notifyContainer = jQuery(notify).closest('.toast-top-center');
+                    $('#noID').css('cursor', 'pointer').attr("id", "bt");
+                },
+                error : function(responce){
+                    var notify = toastr.error('Your e-mail could not been send. Please try again later');
+                    var $notifyContainer = jQuery(notify).closest('.toast-top-center');
+                    //$('#noID').css('cursor', 'pointer').attr("id", "bt");
+                }
+            });
         });
     });
-    function c() {
-        /*var mail= //echo json_encode($username);
-        var rate_value;
 
-        if (document.getElementById('original').checked) {
-            rate_value = "A0";
-        }if (document.getElementById('tripes').checked) {
-            rate_value = "A1";
-        }if (document.getElementById('xeria').checked) {
-            rate_value = "A2";
-        }if (document.getElementById('xeriatripes').checked) {
-            rate_value = "A3";
-        }
-        if (window.XMLHttpRequest) {
-            xmlhttp=new XMLHttpRequest();
-        } else {
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.open("GET","../save.php?x="+ $('#x').val()+ "&z="+ $('#z').val()+ "&y1="+ $('#y1').val()+ "&y2="+ $('#y2').val()+ "&y3="+ $('#y3').val()+ "&kind="+ rate_value + "&email="+ mail,true);
-        xmlhttp.send();*/
-    }
     </script>
 @endsection
 
