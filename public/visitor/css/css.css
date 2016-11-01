@@ -64,4 +64,79 @@ input[type=text]:focus {
     border-color:#333;
 }
 
+#signup, #login{
+    display:none;
+    position:fixed;
+    transition: display 1s;
+    width:1%;
+    height:1%;
+    background-color: whitesmoke;
+    margin-top:20%;
+    margin-left:50%;
+    z-index:10000;
+}
+
+.login_signup_nav{
+    /*float:right;*/
+    width:8%;
+    cursor:pointer;
+    padding:50px;
+}
+
+.login_Signup_Area{
+    width:60%;
+    margin-left:15%;
+    margin-top:40px;
+}
+.close_Log_Sign{
+    float:right;
+    cursor:pointer;
+    width:30px;
+}
+
+/*.registerA:hover {
+    background-color: white;
+    transition: all 0.5s;
+}
+.registerA {
+    background-color: rgb(29,92,104);
+    transition: all 0.5s;
+    border-radius:4%;
+    padding:4%;
+    padding-top:-2%;
+    margin-top:-2%;
+}*/
+
+.StyleTxtField{
+    border: 1px solid #666;
+    border-radius:4px;
+    padding:10px;
+    margin-top:10px;
+    width:100%;
+    padding-left:40px;
+    color:black;
+}
+.StyleTxtField2{
+    border: 1px solid #666;
+    padding:10px;
+    margin-top:10px;
+    width:44%;
+}
+.StyleTxtField3{
+    border: 1px solid #666;
+    border-radius:4px;
+    padding:2px;
+    margin-top:10px;
+    width:21%;
+
+}
+
+.btn-up-spacing{
+    margin-top:3%;
+}
+
+.toast-top-center {
+    top: 20%;
+}
+
 

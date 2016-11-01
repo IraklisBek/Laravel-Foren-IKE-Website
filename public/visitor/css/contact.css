@@ -54,25 +54,3 @@
     width:82%;
 }
 
-.StyleTxtField{
-    border: 1px solid #666;
-    border-radius:4px;
-    padding:10px;
-    margin-top:10px;
-    width:100%;
-    padding-left:40px;
-}
-.StyleTxtField2{
-    border: 1px solid #666;
-    padding:10px;
-    margin-top:10px;
-    width:44%;
-}
-.StyleTxtField3{
-    border: 1px solid #666;
-    border-radius:4px;
-    padding:2px;
-    margin-top:10px;
-    width:21%;
-
-}

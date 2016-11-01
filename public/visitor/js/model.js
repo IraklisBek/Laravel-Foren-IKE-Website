@@ -620,7 +620,7 @@ function setValue() {
 setValue();
 //setInterval(function(){
     $('#tablee').css({"font-size" : window.innerWidth*0.011, "width" : window.innerWidth*0.2});
-    $('input[type=text]').css({"height" : window.innerWidth*0.019, "font-size" : window.innerWidth*0.012});
+    $('input[type=text]').css({"font-size" : window.innerWidth*0.012});
 
 //}, 1);
 

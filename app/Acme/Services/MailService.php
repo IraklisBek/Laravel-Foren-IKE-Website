@@ -9,8 +9,8 @@ class MailService{
 
     public static function sendEmail($data, $kind){
         Mail::send($kind, $data, function($message) use ($data){
-            $message->from($data['email']);//$data['email']
-            $message->to('iraklis@gmail.com');
+            $message->from('iraklis@gmail.com');
+            $message->to('iraklis@gmail.com');//$data['email'] for confirm
             $message->subject($data['subject']);
         });
     }

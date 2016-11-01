@@ -31,18 +31,29 @@
         </ul>
         <ul class="login-menu">
             <li style="margin-right:15%; width:25%;" id="langLi">
-                <a href=""><img src="visitor/images/flags/eng.jpg" width="100%"> </a>
-                <ul id="langUL">
+                <a href=""><img src="visitor/images/flags/eng2.png" width="100%"><br>
+                    <img src="visitor/images/general/VELOSKATO.png" width="40%" style="margin-top:-40%;"></a>
+                <ul id="langUL" style="margin-top:-1%">
                     <li><a href=""><img src="visitor/images/flags/esp2.png" width="100%"> </a></li>
                     <li><a href=""><img src="visitor/images/flags/fr2.png" width="100%"> </a></li>
                 </ul>
             </li>
-            <li>
-                <a href="">Register</a>
-            </li>
-            <li>
-                <a href="">Login</a>
-            </li>
+            @if(!Auth::check())
+                <li>
+                    <a onclick="signup()" class="registerA">Register</a>
+                </li>
+                <li>
+                    <a onclick="login()">Login</a>
+                </li>
+            @else
+                <li id="accountLi">
+                    <a>My Account</a>
+                    <ul id="accountUL">
+                        <li><a href="">Something</a></li>
+                        <li><a href="{{ route('logoutUser') }}">Logout</a></li>
+                    </ul>
+                </li>
+            @endif
         </ul>
     </nav>
 </div>
@@ -69,7 +80,7 @@
                 <li><a href="{{ route('products') }}">Products</a></li>
                 <li><a href="{{ route('about') }}">About</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
-                <li><a href="">Login</a></li>
+                <li><a href="" >Login</a></li>
                 <li><a href="">Register</a></li>
                 <li style="margin-right:15%; width:25%;" id="langLi">
                     Language

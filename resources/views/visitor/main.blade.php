@@ -6,10 +6,15 @@
 
 <body>
 @include('visitor.partials.nav')
+@if(!Auth::check())
+    @include('visitor.auth.login')
+    @include('visitor.auth.register')
+@endif
+<div style="position:fixed; margin-top:15%;">
+    @include('visitor.partials.messages')
+</div>
 
 <div class="container" style="width:100%;">
-    @include('visitor.partials.messages')
-
     @yield('content')
 
 

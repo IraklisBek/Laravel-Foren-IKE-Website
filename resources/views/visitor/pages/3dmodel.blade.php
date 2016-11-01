@@ -21,15 +21,15 @@
     </div>
     <div id="tablee">
         Long sides<br>
-        <input type=text name="x" id="x" value="210mm" ><br>
+        <input type=text name="x" id="x" value="210mm" style="color:black"><br>
         Height of Long sides:<br>
-        <input type=text name="y1" id="y1" value="60mm" ><br>
+        <input type=text name="y1" id="y1" value="60mm" style="color:black"><br>
         Short sides:<br>
-        <input type=text name="z" id="z" value="130mm"><br>
+        <input type=text name="z" id="z" value="130mm" style="color:black"><br>
         Height of Short sides:<br>
-        <input type=text name="y2" id="y2" value="60mm" ><br>
+        <input type=text name="y2" id="y2" value="60mm" style="color:black"><br>
         Height of FORENCLEAT:<br>
-        <input type=text name="y3" id="y3" value="65mm" ><br>
+        <input type=text name="y3" id="y3" value="65mm" style="color:black"><br>
         <label><input style="width:20px; vertical-align: middle; margin: 0px;" id="original" type="radio" name="sex" onchange="installModel('visitor/3DModels/theOriginal6.dae')">Plain FORENBOX</label><br>
         <label><input style="width:20px; vertical-align: middle; margin: 0px;" id="xeria" type="radio" name="sex" onchange="installModel('visitor/3DModels/theXeroulia6.dae')">Handles</label><br>
         <label><input style="width:20px; vertical-align: middle; margin: 0px;" id="tripes" type="radio" name="sex" onchange="installModel('visitor/3DModels/theTripes666.dae')">Ventilation holes</label><br>

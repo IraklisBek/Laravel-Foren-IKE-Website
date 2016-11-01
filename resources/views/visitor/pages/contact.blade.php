@@ -4,8 +4,6 @@
 
 @section('stylesheets')
     {{ Html::script('tinymce/js/tinymce/tinymce.min.js') }}
-    {{ Html::style('visitor/css/toastr.css') }}
-
     {!! Html::style('visitor/css/contact.css') !!}
     <style>
         body{
@@ -14,9 +12,7 @@
         p{
             color: white;
         }
-        .toast-top-center {
-            top: 13%;
-        }
+
         .btn {
             display: inline-block;
             padding: 6px 12px;
@@ -121,7 +117,7 @@
 @endsection
 
 @section('scripts')
-    {{ Html::script('visitor/js/toastr.js') }}
+
     <script>
         $(document).ready(function() {
             $.ajaxSetup({

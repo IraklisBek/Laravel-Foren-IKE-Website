@@ -1,6 +1,6 @@
 @extends('visitor.main')
 
-@section('title', '| Homepage')
+@section('title', '| About Foren')
 
 @section('content')
 

@@ -1,6 +1,5 @@
-<h3>Reset Password</h3>
+<h3>Confirm Registration</h3>
 
 <div>
     {!! $bodyMessage !!}
 </div>
-<p>Sent {{ $email }} via ...</p>

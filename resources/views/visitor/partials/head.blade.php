@@ -17,8 +17,10 @@
 
 </script>
 {{ Html::script('visitor/js/jquery.js') }}
-@if(!Request::is('3dmodel') && !Request::is('contact'))
-    {{ Html::style('visitor/css/bootstrap.min.css') }}
-@endif
+{{ Html::style('visitor/css/bootstrap.min.css') }}
+{{ Html::style('visitor/css/toastr.css') }}
+{{ Html::script('visitor/js/toastr.js') }}
 {{ Html::style('visitor/css/css.css') }}
+{{ Html::script('visitor/js/login_register.js') }}
+
 @yield('stylesheets')
