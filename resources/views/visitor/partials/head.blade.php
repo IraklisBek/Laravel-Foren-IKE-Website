@@ -1,5 +1,6 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <meta name="viewport" content="width=device-width" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Foren @yield('title')</title>
 <meta name="description" content="Automatic machines for foldable crates or boxes for fruits, cheese, mushrooms etc." />
 <link rel="shortcut icon" href="/visitor/images/general/Favicon.png">
@@ -16,6 +17,8 @@
 
 </script>
 {{ Html::script('visitor/js/jquery.js') }}
-
+@if(!Request::is('3dmodel') && !Request::is('contact'))
+    {{ Html::style('visitor/css/bootstrap.min.css') }}
+@endif
 {{ Html::style('visitor/css/css.css') }}
 @yield('stylesheets')

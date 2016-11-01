@@ -17,6 +17,7 @@ Route::get('/products', 'Visitor\\PagesController@getProducts')->name('products'
 Route::get('/about', 'Visitor\\PagesController@getAbout')->name('about');
 Route::get('/contact', 'Visitor\\PagesController@getContact')->name('contact');
 Route::get('/3dmodel', 'Visitor\\PagesController@get3DModel')->name('3dmodel');
+Route::post('contact', 'Visitor\\PagesController@postContact')->name('pages.postContact');
 
 
 

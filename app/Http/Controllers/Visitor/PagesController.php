@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Visitor;
 
+use App\Acme\Services\MailService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+
 
 class PagesController extends Controller
 {
@@ -33,5 +36,21 @@ class PagesController extends Controller
 
     public function get3DModel(){
         return view('visitor.pages.3dmodel');
+    }
+
+    public function postContact(Request $request){
+        $data = array(
+            'email' => Input::get('email'),
+            'subject' => $request->subject,
+            'name' => $request->name,
+            'orgname' => $request->orgname,
+            'body' => $request->body
+        );
+        //var_dump($data);
+        MailService::sendEmail($data, 'visitor.emails.contact');
+        //MessageService::_message('success', 'Your E-mail has been sent');
+        /*return redirect()->action(
+            'Visitor\\PagesController@getContact'
+        );*/
     }
 }

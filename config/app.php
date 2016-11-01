@@ -1,5 +1,5 @@
 <?php
-
+define('myurl', 'http://forenupdate.dev:8000/');
 return [
 
     /*

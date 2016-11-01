@@ -2,7 +2,6 @@
 
 @section('title', '| Forenbox')
 @section('stylesheets')
-    {{ Html::style('visitor/css/bootstrap.min.css') }}
     {!! Html::style('visitor/css/forenbox.css') !!}
 @endsection
 @section('content')

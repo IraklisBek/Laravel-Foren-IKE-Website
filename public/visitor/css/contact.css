@@ -1,0 +1,78 @@
+﻿#contact {
+    width:100%;
+    margin-top:3%;
+    /*margin-left:5%;*/
+    padding:0;
+    background-color:rgb(19,91,103);
+    background-color:white;
+    /*margin-top:10%;*/
+    z-index:99;
+    overflow:hidden;
+
+}
+
+.inputBg{
+    background-color:white;
+}
+
+#contactF, #contactI{
+
+    width:49%;
+    margin-left:28%;
+    margin-top:5%;
+}
+#contactI{
+    font-size:18px;
+    width:80%;
+    margin-left:20%;
+
+}
+#contactForm, #contactInfo{
+
+    width:80%;
+    margin:10%;
+    margin-top:5%;
+}
+#contactInfo ul li{
+    padding:5px;
+}
+#contactInfo ul li a{
+    float:left;
+    margin-left:15px;
+    cursor:pointer;
+}
+#contactInfo ul li a img{
+    width:35px;
+}
+
+#contactForm input{
+    width:82%;
+}
+
+#contactForm textarea{
+    background-color:white;
+    width:82%;
+}
+
+.StyleTxtField{
+    border: 1px solid #666;
+    border-radius:4px;
+    padding:10px;
+    margin-top:10px;
+    width:100%;
+    padding-left:40px;
+}
+.StyleTxtField2{
+    border: 1px solid #666;
+    padding:10px;
+    margin-top:10px;
+    width:44%;
+}
+.StyleTxtField3{
+    border: 1px solid #666;
+    border-radius:4px;
+    padding:2px;
+    margin-top:10px;
+    width:21%;
+
+}
