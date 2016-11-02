@@ -12,7 +12,7 @@
 */
 Route::get('/', 'Visitor\\PagesController@getHome')->name('home');
 Route::get('/forenbox', 'Visitor\\PagesController@getFORENBOX')->name('forenbox');
-Route::get('/gallery', 'Visitor\\PagesController@getGallery')->name('gallery');
+Route::get('/gallery', 'Visitor\\GalleryController@index')->name('gallery');
 Route::get('/products', 'Visitor\\PagesController@getProducts')->name('products');
 Route::get('/about', 'Visitor\\PagesController@getAbout')->name('about');
 Route::get('/contact', 'Visitor\\PagesController@getContact')->name('contact');
