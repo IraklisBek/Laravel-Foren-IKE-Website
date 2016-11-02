@@ -75,25 +75,30 @@
 
 @section('content')
     <!-- Main Content -->
-    <div id="contact" style="margin-bottom:100px; background-color:black;">
-        <form method="post" id="ContactForm" action="{{ route('pages.postContact') }}">
+    <div id="contact" style="margin-bottom:100px;">
+        <div method="post" id="ContactForm" action="{{ route('pages.postContact') }}">
             <div id="contactF" style="margin-bottom:0; margin-top:10%;">
 
                 <div id="contactForm" style="margin-bottom:0">
                     {!! csrf_field() !!}
-                    <!--name-->
-                    <input placeholder="Name" type="text" name="name" id="name" style="background: url('visitor/images/general/username.png') no-repeat left center; background-color:white; " class="StyleTxtField inputBg" required>
-                    <!--contactemail-->
-                    <input placeholder="E-Mail" type="email" name="email" id="email" class="StyleTxtField inputBg" style="background: url('visitor/images/general/email.png') no-repeat left center; background-color:white;" required>
-                    <!--orgname-->
-                    <input placeholder="Organization Name" type="text" name="orgname" id="orgname" class="StyleTxtField inputBg" style="background: url('visitor/images/general/orgname.png') no-repeat left center; background-color:white; " required>
-                    <!--sub-->
-                    <input placeholder="Subject" type="text" name="subject" id="subject" class="StyleTxtField inputBg" style="background: url('visitor/images/contact/subject.png') no-repeat left center; background-color:white; " required>
-                    <!--body-->
-                    <textarea rows=8 placeholder="Your e-mail" name="body" id="body" class=StyleTxtField style="" required=required></textarea>
-                    <input id="sendEmail" type="submit" value="Send e-mail" class="btn btn-primary" style="margin-top:2%">
+                <div class="form-group">
+                    <input placeholder="Name" type="text" name="name" id="name" class="form-control"  style="background-color:white !important; background: url('visitor/images/general/username.png') no-repeat left center; padding-left:40px; " required>
                 </div>
+                <div class="form-group">
+                    <input placeholder="E-Mail" type="email" name="email" id="email" class="form-control" style="background-color:white !important; background: url('visitor/images/general/email.png') no-repeat left center; padding-left:40px;" required>
+                </div>
+                <div class="form-group">
+                    <input placeholder="Organization Name" type="text" name="orgname" id="orgname" class="form-control" style="background-color:white !important; background: url('visitor/images/general/orgname.png') no-repeat left center; padding-left:40px;" required>
+                </div>
+                <div class="form-group">
+                    <input placeholder="Subject" type="text" name="subject" id="subject" class="form-control" style="background-color:white !important; background: url('visitor/images/contact/subject.png') no-repeat left center; padding-left:40px;" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows=8 placeholder="Your e-mail" name="body" id="body" class=form-control style=" padding-left:40px;" required=required></textarea>
+                </div>
+                <input id="sendEmail" type="submit" value="Send e-mail" class="btn btn-primary" style="margin-top:2%">
             </div>
+        </div>
         </form>
         <div id="form-messages" style="width:20%; text-align:center; margin-top:-2%; margin-left:40%; padding:25px; background-color:rgb(29, 91, 104); display:none; "></div>
         <img alt="hr" src=visitor/images/general/megaligrammi.png width="95%" style="margin-left:2.5%; height:2px; margin-top:2%; ">

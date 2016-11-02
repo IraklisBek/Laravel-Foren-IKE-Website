@@ -60,9 +60,6 @@ hr{
 
 }
 
-input[type=text]:focus {
-    border-color:#333;
-}
 
 #signup, #login{
     display:none;

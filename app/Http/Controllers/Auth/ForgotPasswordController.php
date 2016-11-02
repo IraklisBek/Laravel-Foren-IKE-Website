@@ -58,7 +58,7 @@ class ForgotPasswordController extends Controller
     public function sendEmail(Request $request){
         $email = $request->resetemail;
         if(!UserService::getUserByEmail($email)){
-            MessageService::_message('error', 'You have not registered to our website yet!');
+            MessageService::_message('fail', 'You have not registered to our website yet!');
             return redirect()->back();
         }
         $token = str_random(30);

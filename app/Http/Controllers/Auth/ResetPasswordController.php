@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Acme\MessageService;
-use App\Acme\PasswordResetService;
-use App\Acme\UserService;
+use App\Acme\Services\MessageService;
+use App\Acme\Services\PasswordResetService;
+use App\Acme\Services\UserService;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ResetPasswordRequest;
 use App\PasswordReset;
 use App\User;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class ResetPasswordController extends Controller
@@ -45,12 +45,26 @@ class ResetPasswordController extends Controller
     }
 
     private function update(User $user, $newPassword, PasswordReset $reset_email){
-        UserService::updateUser($user, ['password' => Hash::make($newPassword)]);
-        PasswordResetService::deletePasswordResetRow($reset_email);
+        $Blowfish_Pre = '$2a$05$';
+        $Blowfish_End = '$';
+        $Allowed_Chars ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789./';
+        $Chars_Len = 63;
+        $Salt_Length = 21;
+        $salt = "";
+        for($i=0; $i<$Salt_Length; $i++)
+        {
+            $salt .= $Allowed_Chars[mt_rand(0,$Chars_Len)];
+        }
+        $bcrypt_salt = $Blowfish_Pre . $salt . $Blowfish_End;
+        //UserService::updateUser($user, ['password' => crypt($newPassword, $bcrypt_salt), 'salt' => $salt]);
+        $user->password = crypt($newPassword, $bcrypt_salt);
+        $user->salt = $salt;
+        $user->save();
+        //PasswordResetService::deletePasswordResetRow($reset_email);
         MessageService::_message('success', 'Your password has successfully changed');
     }
 
-    public function postResetPassword(ResetPasswordRequest $request, $browser_token)
+    public function postResetPassword(Request $request, $browser_token)
     {
         $email = $request->email;
         $user = UserService::getUserByEmail($email);
@@ -62,9 +76,9 @@ class ResetPasswordController extends Controller
         if($passwordMismatch) return redirect()->route('auth.resetPassword', ['token' => $browser_token]);
 
         $user_real_token = $reset_email->token;
-        if(PasswordResetService::cheating($user_real_token, $browser_token)) return redirect()->route('auth.forgotPassword');
+        if(PasswordResetService::cheating($user_real_token, $browser_token)) return redirect()->route('home');
 
         $this->update($user, $request->new_password, $reset_email);
-        return redirect()->route('auth.login');
+        return redirect()->route('home');
     }
 }
