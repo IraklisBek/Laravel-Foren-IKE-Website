@@ -82,9 +82,11 @@ class RegisterController extends Controller
             $user->save();
             //$user->roles()->sync([1], false);
             $data = array(
-                'email' => $request->email,
-                'bodyMessage' => '<a href="'.$link.'">Click here to confirm registration</a>',
-                'subject' => 'Confirm Registration'
+                'email' => $request->registeremail,
+                'link' => $link,
+                'subject' => 'Welcome to FOREN',
+                'name' => $request->registername
+
             );
             MailService::sendConfirmationEmail($data, 'visitor.emails.confirmRegistration');
             MessageService::_message('success', 'Welcome '.$request->name.'! Your registration has been successful. Please Confirm your registration in your e-mail');
@@ -102,8 +104,19 @@ class RegisterController extends Controller
         $user = new User;
 
         $validator = ValidationService::validateCreation($request, $user);
-        if($validator->fails())
-            return redirect()->route('home')->withErrors($validator)->withInput();
+        if($validator->fails()) {
+            \Request::session()->flash('registerError', '');
+            $errorsToastr = "";
+            foreach($validator->messages()->getMessages() as $field_name => $messages) {
+                // Go through each message for this field.
+                foreach($messages AS $message) {
+                    $errorsToastr .= $field_name . ': ' . $message;
+                    echo '<br>';
+                }
+            }
+            MessageService::_message('fail', $errorsToastr);
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
         if(UserService::passwordsMismatch($request->password, $request->confirmPassword)){
             return redirect()->back();

@@ -20,6 +20,7 @@ class MailService{
             $message->from('iraklis@gmail.com');
             $message->to('iraklis@gmail.com');//$data['email']
             $message->subject($data['subject']);
+            $message->embed('visitor/images/general/logo.jpg');
         });
     }
 
