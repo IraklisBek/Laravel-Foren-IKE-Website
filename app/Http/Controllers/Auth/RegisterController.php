@@ -86,7 +86,7 @@ class RegisterController extends Controller
                 'bodyMessage' => '<a href="'.$link.'">Click here to confirm registration</a>',
                 'subject' => 'Confirm Registration'
             );
-            MailService::sendEmail($data, 'visitor.emails.confirmRegistration');
+            MailService::sendConfirmationEmail($data, 'visitor.emails.confirmRegistration');
             MessageService::_message('success', 'Welcome '.$request->name.'! Your registration has been successful. Please Confirm your registration in your e-mail');
             return true;
         }catch (QueryException $e){

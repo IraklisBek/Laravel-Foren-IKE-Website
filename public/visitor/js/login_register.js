@@ -14,6 +14,9 @@ function closeSign(){
 }
 var bool2 = true;
 function login(){
+    $('#resetForm').css('display', 'none');
+    $('#loginForm').css('display', 'block');
+    $('#resetSpan').css('display', 'block');
     closeSign();
     document.getElementById('login').style.display="block";
     if(bool2){
@@ -25,4 +28,10 @@ function closeLog(){
     $('#login').animate({height : 0, width : 0, marginLeft : window.innerWidth/2 , marginTop : '25%'},500);
     bool2=true;
     setTimeout(function(){	document.getElementById('login').style.display="none"; }, 500);
+}
+
+function reset(){
+    $('#resetForm').css('display', 'block');
+    $('#loginForm').css('display', 'none');
+    $('#resetSpan').css('display', 'none');
 }

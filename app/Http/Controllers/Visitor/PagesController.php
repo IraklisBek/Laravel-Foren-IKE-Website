@@ -48,7 +48,7 @@ class PagesController extends Controller
             'body' => $request->body
         );
         //var_dump($data);
-        MailService::sendEmail($data, 'visitor.emails.contact');
+        MailService::contactEmail($data, 'visitor.emails.contact');
         //MessageService::_message('success', 'Your E-mail has been sent');
         /*return redirect()->action(
             'Visitor\\PagesController@getContact'

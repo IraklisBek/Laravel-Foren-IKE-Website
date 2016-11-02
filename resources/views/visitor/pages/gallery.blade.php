@@ -1,6 +1,6 @@
 @extends('visitor.main')
 
-@section('title', '| Homepage')
+@section('title', '| Gallery')
 @section('stylesheets')
     {!! Html::style('visitor/css/gallery.css') !!}
     {!! Html::style('visitor/fonts/font-awesome-4.7.0/css/font-awesome.min.css') !!}

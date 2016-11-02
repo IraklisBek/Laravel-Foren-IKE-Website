@@ -98,7 +98,7 @@
         <div id="form-messages" style="width:20%; text-align:center; margin-top:-2%; margin-left:40%; padding:25px; background-color:rgb(29, 91, 104); display:none; "></div>
         <img alt="hr" src=visitor/images/general/megaligrammi.png width="95%" style="margin-left:2.5%; height:2px; margin-top:2%; ">
         <div id="contactI" >
-            <div id="contactInfo" style="margin-left:1%; margin-top:-11%;">
+            <div id="contactInfo" style="margin-left:1%;">
                 <ul style="width:9%; float:left; list-style-type:none; color:white">
                     <li>Address: </li>
                     <li>Phone: </li>

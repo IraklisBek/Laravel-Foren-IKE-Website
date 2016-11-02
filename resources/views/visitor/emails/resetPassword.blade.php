@@ -3,4 +3,3 @@
 <div>
     {!! $bodyMessage !!}
 </div>
-<p>Sent {{ $email }} via ...</p>
