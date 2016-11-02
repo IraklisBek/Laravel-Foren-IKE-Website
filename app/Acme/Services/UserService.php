@@ -75,6 +75,11 @@ class UserService{
         return false;
     }
 
+    public static function checkVerification(){
+        if(Auth::check() && Auth::user()->confirm == 0)
+            return true;
+        return false;
+    }
     /**
      * @param User $user
      * @param $data

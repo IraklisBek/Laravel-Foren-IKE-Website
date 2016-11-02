@@ -13,7 +13,7 @@
             <li id="FORENBOXLi">
                 <a href="{{ route('forenbox') }}" class="{{ Request::is('forenbox') ? "active" : "" }}">FORENBOX</a>
                 <ul style="position:absolute; display:none;" id="galleryUL">
-                    <li><a href="{{ route('gallery') }}" class="{{ Request::is('gallery') ? "active" : "" }}">Gallery</a></li>
+                    <li><a  href="{{ route('gallery') }}" class="{{ Request::is('gallery') ? "active" : "" }}">Gallery</a></li>
                 </ul>
             </li>
             <li>

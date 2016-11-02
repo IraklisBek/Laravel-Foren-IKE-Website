@@ -64,6 +64,11 @@ class LoginController extends Controller
         if (!UserService::getUserByEmailAndPassword($user->email, $password)){
             return redirect()->back();
         }
+        if($user->confirm == 0){
+            \Request::session()->flash('logInError', '');
+            MessageService::_message('fail', 'Please verify your account to login to our webpage. Check your Email!');
+            return redirect()->back();
+        }
         Auth::login($user, true);
         MessageService::_message('success', 'Welcome back '.Auth::user()->name.'!');
         return redirect()->back();

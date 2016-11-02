@@ -1,0 +1,18 @@
+﻿.about{
+    text-align: justify;
+    text-justify: inter-word;
+    background-color:white; 
+    color:black; 
+    padding:30px; 
+    width:40%; 
+    margin:27%; 
+    margin:11% auto;
+    margin-top:11%;
+    margin-bottom:2%; 
+}
+
+.logo{
+	width:60%;
+	padding-right:2%; 
+	margin-left:20%;
+}

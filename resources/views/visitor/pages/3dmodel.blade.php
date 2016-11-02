@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-
+@if(Auth::check() && Auth::user()->confirm == 1)
     <div id="loading">
         <img alt="loading" src=visitor/images/general/loading.gif class="loading">
     </div>
@@ -72,7 +72,16 @@
         <p id="xWunder" class="error">• For Handles: Short sides must be more than 150mm</p>
     </div>
     <div class="properly">If the 3dmodel does not  <br>load properly please <a class=blueLink href="{{ route('3dmodel') }}">refresh</a></div>
-
+@else
+    <div class="tocheck">
+        @if(Auth::check())
+            Please verify your account so you can build your 3D Model
+        @else
+            Please <a id="ssss" onclick="signup()" class=blueLink style="border-radius:4px;  cursor:pointer; ">Register</a> or <a  id="sss" onclick="login()"  class="blueLink" style=" padding:7px; padding-bottom:0; cursor: pointer">Login</a> to our website so you can build your own ForenBox
+        @endif
+    </div>
+    <img alt="animated 3d model" src=visitor/images/forenbox/animated_3d_model.gif class="animated3dModel" width="35%" style="margin-left:32.5%">
+@endif
 @endsection
 
 @section('scripts')
@@ -92,41 +101,43 @@
             //renderer.setClearColor("white");
             //setTimeout(function(){window.open( renderer.domElement.toDataURL("image/png"), "Final");renderer.setClearColor("black");},500);
             //document.getElementById("bt").download  ="ForenBox_"+"" + $('#x').val()+ "X"+$('#z').val()+ "X"+$('#y1').val()+ "X"+$('#y2').val()+ "-"+$('#y3').val() + ".png"    ;
-            $('#bt').css('cursor', 'not-allowed').attr("id", "noID");
-            var user= "{{ Auth::user()->email }}";
-            var rate_value;
+            @if(Auth::check())
+                $('#bt').css('cursor', 'not-allowed').attr("id", "noID");
+                var user= "{{ Auth::user()->email }}";
+                var rate_value;
 
-            var image = renderer.domElement.toDataURL("image/png");
-            if (document.getElementById('original').checked) {
-                rate_value = "A0";
-            }if (document.getElementById('tripes').checked) {
-                rate_value = "A1";
-            }if (document.getElementById('xeria').checked) {
-                rate_value = "A2";
-            }if (document.getElementById('xeriatripes').checked) {
-                rate_value = "A3";
-            }
-            var x=$('#x').val(),
-                z=$('#z').val(),
-                y1=$('#y1').val(),
-                y2=$('#y2').val(),
-                y3=$('#y3').val(),
-                kind=rate_value;
-            $.ajax({
-                type: 'POST',
-                url: '/send3DModel',
-                data: {user: user, x: x, z: z, y1: y1, y2: y2, y3:y3, kind:kind, image: image},
-                success: function (response) {
-                    var notify = toastr.success('3D Model has been sent to your e-mail');
-                    var $notifyContainer = jQuery(notify).closest('.toast-top-center');
-                    $('#noID').css('cursor', 'pointer').attr("id", "bt");
-                },
-                error : function(responce){
-                    var notify = toastr.error('Your e-mail could not been send. Please try again later');
-                    var $notifyContainer = jQuery(notify).closest('.toast-top-center');
-                    //$('#noID').css('cursor', 'pointer').attr("id", "bt");
+                var image = renderer.domElement.toDataURL("image/png");
+                if (document.getElementById('original').checked) {
+                    rate_value = "A0";
+                }if (document.getElementById('tripes').checked) {
+                    rate_value = "A1";
+                }if (document.getElementById('xeria').checked) {
+                    rate_value = "A2";
+                }if (document.getElementById('xeriatripes').checked) {
+                    rate_value = "A3";
                 }
-            });
+                var x=$('#x').val(),
+                    z=$('#z').val(),
+                    y1=$('#y1').val(),
+                    y2=$('#y2').val(),
+                    y3=$('#y3').val(),
+                    kind=rate_value;
+                $.ajax({
+                    type: 'POST',
+                    url: '/send3DModel',
+                    data: {user: user, x: x, z: z, y1: y1, y2: y2, y3:y3, kind:kind, image: image},
+                    success: function (response) {
+                        var notify = toastr.success('3D Model has been sent to your e-mail');
+                        var $notifyContainer = jQuery(notify).closest('.toast-top-center');
+                        $('#noID').css('cursor', 'pointer').attr("id", "bt");
+                    },
+                    error : function(responce){
+                        var notify = toastr.error('Your e-mail could not been send. Please try again later');
+                        var $notifyContainer = jQuery(notify).closest('.toast-top-center');
+                        //$('#noID').css('cursor', 'pointer').attr("id", "bt");
+                    }
+                });
+            @endif
         });
     });
 
