@@ -23,7 +23,7 @@ class PasswordResetService
      */
     public static function cheating($user_real_token, $browser_token){
         if(strcmp($user_real_token, $browser_token)!=0){
-            MessageService::_message('fail', 'You are cheacting');
+            MessageService::_message('fail', 'Your password could not be updated. Please check your e-mail or click again the link from your e-mail.');
             return true;
         }
     }
@@ -39,7 +39,7 @@ class PasswordResetService
         if($reset_email->count()) {
             return PasswordReset::hasExpired(12, $reset_email);
         }else{
-            MessageService::_message('fail', 'Please send us your email in order to be able to reset your password');
+            MessageService::_message('fail', 'You link has expired. Please make a new password reset request.');
             return false;
         }
 

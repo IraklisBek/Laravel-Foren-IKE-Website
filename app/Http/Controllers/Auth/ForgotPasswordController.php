@@ -65,8 +65,8 @@ class ForgotPasswordController extends Controller
         $link = constant('myurl').'resetPassword?token='. $token;
         $data = array(
             'email' => $email,
-            'bodyMessage' => '<a href="'.$link.'">Click here to reset tour password</a>',
-            'subject' => 'Reset Password');
+            'link' => $link,
+            'subject' => 'FOREN: Reset Password');
         if(!$this->insertToDB($email, $token)) return redirect()->route('auth.forgotPassword');
         MailService::sendResetPasswordEmail($data, 'visitor.emails.resetPassword');
         MessageService::_message('success', 'Your request is accepted. Check your email to reset your password');

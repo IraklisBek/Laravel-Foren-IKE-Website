@@ -64,7 +64,7 @@ class PagesController extends Controller
             'y2' => Input::get('y2'),
             'y3' => Input::get('y3'),
             'kind' => Input::get('kind'),
-            'subject' => '3D Model mail delivery',
+            'subject' => 'FOREN: 3D Model Mail Delivery',
             'image' => Input::get('image')
         );
         MailService::sendModel($data, 'visitor.emails.3dmodel');

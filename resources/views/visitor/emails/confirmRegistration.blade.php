@@ -9,7 +9,7 @@
     <div style='padding:5%;'>
         <p>Hello {{ $name }}! Thank you for your registration.
             <br><br>
-            Help us secure your Foren account by verifying your email address ({{ $email }}). This lets you access all of Foren features. </p>
+            Help us secure your Foren account by verifying your email address ({{ $email }}). This lets you access all of Foren features like <a href="{{ route('3dmodel') }}" class="blueLink">3D Model Builder</a>. </p>
         <div style='width:50%; text-align:center; padding:2%; margin:10% auto; border:4px solid rgb(29, 91, 144); border-radius:4px; background-color:rgb(29, 91, 144); color:white;'><a href="{{ $link }}" style='display:block; color:white; text-decoration:none; font-size:20px;'>Verify email address</a></div>
         <hr>
         <p>
