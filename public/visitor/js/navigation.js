@@ -30,8 +30,6 @@ setTimeout(function() {
         dropDownDisplay("#FORENBOXLi", '#galleryUL');
         dropDownDisplay("#langLi", '#langUL');
         dropDownDisplay("#accountLi", '#accountUL');
-        $('#foot').css('font-size', $(window).width() * 0.015);
-        $('#createdBy').css('font-size', $(window).width() * 0.012);
     }, 1);
     //}
     /*$('#mobileMenuImg').click(function () {

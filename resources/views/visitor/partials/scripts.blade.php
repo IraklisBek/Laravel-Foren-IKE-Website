@@ -1,11 +1,8 @@
 {{-- Html::script('visitor/js/bootstrap.js') --}}
 {{ Html::script('visitor/js/navigation.js') }}
 <script>
-    $(document).ready(function() {
-        $("[href]").each(function() {
-            if (this.href == window.location.href) {
-                $(this).addClass("activeLink");
-            }
-        });
-    });
+    setInterval(function () {
+        $('#copyright2').css('font-size', $(window).width() * 0.015);
+        $('#createdBy2').css('font-size', $(window).width() * 0.012);
+    }, 1);
 </script>

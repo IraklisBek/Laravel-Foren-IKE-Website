@@ -2,10 +2,10 @@
     <span style="visibility:hidden">a</span>
 </div>
 <div id="foot">
-    <p id="copyright" style="width:100%; text-align: center; color:white; margin-top:0;">
+    <p id="copyright2" style="width:100%; text-align: center; color:white; margin-top:0;">
         All Rights Reserved to FOREN IKE &copy; 2016
     </p>
-    <p style="width:100%; text-align: center; margin-top:0;" id="createdBy">
+    <p style="width:100%; text-align: center; margin-top:0;" id="createdBy2">
         Created by: <a href="https://www.behance.net/KleonTantaridis" target=_blank class=blueLink>Kleon Tantaridis</a>
     </p>
 </div>
